@@ -36,10 +36,6 @@ const data = {
     ]
   }
 
-//   data.ingredients["name"]= "glaric"
-//   data.ingredients["count"]= 2
-//   data.ingredients["unit"]= "teaspoons"
 
   data.ingredients.push({ "name": "glaric" , "count": 2 , "unit": "teaspoons"})
-
   console.log(data)
