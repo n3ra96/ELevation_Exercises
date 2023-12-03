@@ -1,0 +1,77 @@
+/* .title{
+    
+}
+
+.center{
+
+}
+
+.last{
+
+} */
+
+
+
+
+.nav-item{
+    height: 25px;
+    background-color: violet;
+    margin-bottom: 75px;
+    justify-content: start; 
+    margin-top: 50px;
+}
+
+
+
+
+.received{
+    height: fit-content;
+    width: fit-content;
+    background-color: gray;
+    justify-self:  start;
+    border-radius: 4px;
+    margin-left: 10px;
+    
+    
+}
+
+.sent{
+    height: fit-content;
+    width: fit-content;
+    background-color: #16a085;
+    justify-self: end;
+    border-radius: 4px;
+    margin-right: 10px;
+    position: relative;
+    left: 83%;
+   
+    
+    
+}
+
+.time{
+    display: grid;
+    justify-content: end;
+    font-size: small;
+}
+
+
+
+.send{
+    display: grid;
+    background-color: purple;
+    justify-content: center;
+    
+
+}
+
+.col-sm-9{
+
+background-color: lavender;
+}
+
+.col-sm-3{
+    background-color: purple;
+
+}
+

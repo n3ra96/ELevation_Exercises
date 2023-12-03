@@ -1,0 +1,82 @@
+#container{
+    display: grid;
+    height: 100vh;
+    grid-template-columns: repeat(7, 1fr);
+    grid-template-rows: repeat(5, 1fr);
+    grid-template-areas: 
+    "s s m m m m m"
+    "s s m m m m m"
+    "s s m m m m m"
+    "s s m m m m m"
+    "s s m m m m m"
+    "s s f f f f f";
+}
+#nav-container{
+    grid-area: s;
+    background-color: purple;
+}
+
+.nav-item{
+    display: grid; 
+    grid-template-rows: repeat(4, 1fr);
+    grid-gap: 50px;
+    height: 25px;
+    background-color: violet;
+    margin-bottom: 75px;
+    justify-content: start; 
+    margin-top: 50px;
+}
+
+#message-container{
+    display: grid;
+    grid-area: m;
+    background-color: gainsboro;
+    grid-gap: 10px;
+    grid-template-rows: repeat(5, 1fr);
+}
+
+
+.received{
+    height: fit-content;
+    width: fit-content;
+    background-color: gray;
+    justify-self:  start;
+    border-radius: 4px;
+    margin-left: 10px;
+    
+    
+}
+
+.sent{
+    display: grid;
+    height: fit-content;
+    width: fit-content;
+    background-color: #16a085;
+    justify-self: end;
+    border-radius: 4px;
+    margin-right: 10px;
+   
+    
+    
+}
+
+.time{
+    display: grid;
+    justify-content: end;
+    font-size: small;
+}
+
+#send-container{
+    grid-template-columns: 5fr 1fr;
+    display: grid;
+    grid-area: f;
+    
+}
+
+.send{
+    display: grid;
+    background-color: purple;
+    justify-content: center;
+    
+
+}

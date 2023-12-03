@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>DOM</title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+    <!-- 1 Completing the Game-->
+    <!-- <div id="container">
+        <div id="playing-field" class="centered">
+            <div id="ball" class="centered"></div>
+        </div>
+        <div id="arrows" class="centered">
+            <div id="up" class="arrow">&uarr;</div>
+            <div id="left" class="arrow">&larr;</div>
+            <div id="right" onclick="moveRight()" class="arrow">&rarr;</div>
+            <div id="down" class="arrow">&darr;</div>
+            <div id="box" onmouseenter="enterColor()" onclick="changeColor()" onmouseleave="leaveColor()">Hover over me!</div>
+        </div>
+    </div> -->
+    <!-- 2 Reservations-->
+
+    <!-- <div id="form"> 
+      <input type="text"  name="fname" id="client" > </input>
+      <input class="favorite styled" onclick="checkReservation()" type="button" value="Add to favorites" ></input>
+    </div> -->
+
+     <!--3 Visual Overload
+    <div id="container" >
+    </div> -->
+
+
+    <div id="form"> 
+        
+        <label for="name">Name</label>
+        <input type="text" id="name" required>
+        <span id="nameError" class="error-message"></span>
+
+        
+         
+        <label for="salary">Salary</label>
+        <input type="number" id="salary" required>
+        <span id="salaryError" class="error-message"></span>
+
+        
+         
+        <label for="birthday">Birthday</label>
+        <input type="date" id="birthday" required>
+        <span id="birthdayError" class="error-message"></span>
+
+         
+ 
+        <label for="phone">Phone</label>
+        <input type="tel" id="phone" required>
+        <span id="phoneError" class="error-message"></span>
+
+        <!-- <button type="button" onclick="validate()" style="font-family: Verdana; float: right; margin-right: 10px;">Submit</button> -->
+        <input class="Submit" onclick="validate()" type="button" value="Submit" style="font-family: Verdana; float: right; margin-right: 30px; width: 100px; margin-top: 40px;">
+      </div>
+
+
+    <script src="main.js"></script>
+</body>
+
+</html>
