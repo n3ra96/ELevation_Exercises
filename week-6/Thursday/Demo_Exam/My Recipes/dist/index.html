@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Recipes List</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://fonts.googleapis.com/css?family=PT+Sans" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" media="screen" href="style.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<body>
+    <div id="new-recipe">
+        <input type="text" id="new-recipe-input" placeholder="recipe" />
+        <button onclick= "showrecipe()" >Search</button><br>
+        <form>
+            <input type="checkbox" id="gluten" name="ingredient" value="Gluten">
+            <label for="gluten">Gluten</label><br>
+            <input type="checkbox" id="dairy" name="ingredient" value="Dairy">
+            <label for="dairy">Dairy</label><br>
+        </form>
+    </div>
+
+    <div id="recipes"></div>
+
+    <script id="recipes-template" type="text/x-handlebars-template">
+        {{#each recipes}}
+            <div class="recipe"  >
+                <p class="name">{{title}} </p>
+                <img src={{thumbnail}} id="{{idMeal}}" >
+                <ul class="ingredients">
+                    {{#each ingredients}}
+                    <li>{{this}}</li>
+                    {{/each}}
+                </ul>
+                <p class="name">Chef: {{chefName}} </p>
+                {{#stars starNumber}}
+                
+                {{/stars}}
+                <!-- {{#unless visited}}
+                    <p class=visit>Visit</p>
+                {{/unless}} -->
+            </div>
+        {{/each}}
+    </script>
+
+    <script src="./jquery/dist/jquery.js"></script>
+    <script src="./handlebars/dist/handlebars.js"></script>
+    <script src="config.js"></script>
+    <script src="view.js"></script>
+    <script src="model.js"></script>
+    <script src="main.js"></script>
+</body>
+
+</html>
