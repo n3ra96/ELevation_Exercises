@@ -6,11 +6,20 @@ const Function = require('./Functions')
 let FavRecipes = []
 
 
-router.get('/recipes/:name', function (req, res) {
+router.get('/recipes/:name', async function (req, res) {
   let recipe = req.params.name
-  Function.getRequest(recipe).then(FiltredRecipes =>
-    res.send(FiltredRecipes)
-  )
+  let dataset = await Function.getRequest(recipe)
+  console.log(dataset)
+  console.log(dataset.length)
+  for(let i = 0 ; i<dataset.length ; i++){
+      dataset[i].thumbnail = Function.getGif(dataset[i].title)
+  }
+
+  console.log(dataset)
+
+  res.send(await Function.getRequest(recipe))
+  
+  
 
 })
 

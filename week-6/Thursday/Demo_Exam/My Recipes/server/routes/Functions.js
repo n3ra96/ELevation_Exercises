@@ -12,24 +12,57 @@ function randomNumber() {
     return faker.datatype.number({ min: 1, max: 5 })
 }
 
-function getRequest(param) {
-    const recipes = axios
+async function getGif(title){
+
+    const myString = title;
+    const newString = myString.split(' ').join('+');
+    const keyTitle = newString
+    
+    const recipeGif = await axios
+        .get(CONFIG.GIF_API_P1+keyTitle+CONFIG.GIF_API_P2)
+        .then((response) => {
+            let result = response.data
+            let apiData = result.data[0]
+            const gifData = ((meal) => {
+                return  meal.url  
+            })
+            
+            return gifData(apiData)
+        })
+        .catch((err) => console.log(err));
+    
+    return recipeGif
+}
+
+async function getRequest(param) {
+    const recipes = await axios
         .get(CONFIG.URL + param)
         .then((response) => {
             let result = response.data
             let data = result[CONFIG.RESULT]
             let newData = data.map((meal) => {
-                return {
-                    idMeal: meal.idMeal, chefName: randomName(), starNumber: randomNumber(), ingredients: meal.ingredients
-                    , Category: meal.strCategory, title: meal.title, area: CONFIG.AREATOCOUNTRY[meal.strArea.toLowerCase()], instruction: meal.strInstructions,
-                    countryCode: CONFIG.COUNTRYCODES[meal.strArea.toLowerCase()], thumbnail: meal.thumbnail, href: meal.href
+                
+                return  {
+                     idMeal: meal.idMeal,
+                     chefName: randomName(), 
+                     starNumber: randomNumber(),
+                     ingredients: meal.ingredients,
+                     Category: meal.strCategory,
+                     title: meal.title,
+                     area: CONFIG.AREATOCOUNTRY[meal.strArea.toLowerCase()],
+                     instruction: meal.strInstructions,
+                     countryCode: CONFIG.COUNTRYCODES[meal.strArea.toLowerCase()],
+                     thumbnail:  meal.thumbnail,
+                     href: meal.href
                 }
+                
             })
+            
             return newData
         })
         .catch((err) => console.log(err));
-
-    return recipes
+     
+    return  recipes
 
 }
 
@@ -105,6 +138,7 @@ function FilterByDairyAndGluten(param) {
 
 
 module.exports = {
+    getGif,
     getRequest,
     FilterByGluten,
     FilterByDairy,
