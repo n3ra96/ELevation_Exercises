@@ -31,7 +31,6 @@ const COUNTRYCODES = {
 };
 
 const GIF_API_P1 = "https://api.giphy.com/v1/gifs/search?api_key=2Q1sG7m38jr3UU8BYiJZxdLY7IuXw3cD&q="
-const GIF_API_PINPUT = "summer+pudding"
 const GIF_API_P2 = "&limit=25&offset=0&rating=g&lang=en&bundle=messaging_non_clips"
 
 module.exports = {
